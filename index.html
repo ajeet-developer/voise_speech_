@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<style>
+    .mx-auto{
+margin-top: 170px;
+border-radius: 5px;
+    }
+</style>
+<body>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-4 shadow mx-auto p-5">
+    <div class="input-group">
+     <span class="input-group-text"><i class="fa-solid fa-bell fa-shake"></i></span>
+     <input placeholder="Enter Your Text" class="form-control" id="text" type="text">
+    </div>
+    <div class="input-group mt-3">
+        <button class="form-control text-light fw-bold bg-info" id="playBtn">Speach <i class="fa-solid fa-music fa-shake"></i></button>   
+    </div>
+  </div>  
+ </div>   
+</div>
+
+   
+ <script>
+const speakBtn=document.querySelector("#playBtn");
+const query=document.querySelector("#text");
+speakBtn.addEventListener("click",playSpeech);
+
+function playSpeech(){
+    const speech=new SpeechSynthesisUtterance(query.value);
+    speech.lang = "hi-IN";
+    speechSynthesis.speak(speech);
+}
+ </script>   
+</body>
+</html>
